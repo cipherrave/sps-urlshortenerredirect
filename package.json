@@ -2,13 +2,17 @@
   "name": "sps-urlshortenerredirect",
   "version": "1.0.0",
   "description": "URL Shortener Redirect",
-  "main": "index.js",
+  "main": "app.mjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "cipherrave",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3"
   }
 }
