@@ -1,22 +1,27 @@
 import express from "express";
-import homePage from "./controllers/homePage.mjs";
-import registerPage from "./controllers/registerPage.mjs";
-import loginPage from "./controllers/loginPage.mjs";
-import errorPage from "./controllers/errorPage.mjs";
+import homePage from "./controllers/getHomePage.mjs";
+import registerPage from "./controllers/getRegisterPage.mjs";
+import loginPage from "./controllers/getLoginPage.mjs";
+import errorPage from "./controllers/getErrorPage.mjs";
+import postRegisterPage from "./controllers/postRegisterPage.mjs";
 
 const server = express();
-
-// include "public" folder in server (DOESNT WORK)
-// app.use(express.static(path.join(__dirname, "public")));
 
 // initialize database
 // dbInit();
 
-// setting controllers script for website navigation
+// include "public" folder in server (DOESNT WORK)
+server.use(express.static("public"));
+
+// GET routings
 server.get("/", homePage);
 server.get("/login", loginPage);
 server.get("/register", registerPage);
 server.get("/*", errorPage);
+
+// POST routings
+server.post("/thankyou", postRegisterPage);
+server.post("/urlshortener", isAuth,  )
 
 // setting port used and console log the address
 const PORT = 3000;

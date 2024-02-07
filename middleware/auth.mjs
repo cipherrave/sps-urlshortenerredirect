@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import pool from "../database/connection.mjs";
 import bcrypt, { genSalt } from "bcrypt";
 
-import { decrypt, encrypt } from "../utils/encryption.mjs";
+import { decrypt, encrypt } from "./encryption.mjs";
 
 export async function register(req, res) {
   try {
